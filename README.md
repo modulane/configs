@@ -7,9 +7,10 @@ The shared formatting and linting configurations for modulane repositories, so e
 
 ## Packages
 
-| Package                                                 | What it holds                                       |
-| ------------------------------------------------------- | --------------------------------------------------- |
-| [`@modulane/prettier-config`](packages/prettier-config) | The Prettier options every modulane repository uses |
+| Package                                                 | What it holds                                                        |
+| ------------------------------------------------------- | -------------------------------------------------------------------- |
+| [`@modulane/prettier-config`](packages/prettier-config) | The Prettier options every modulane repository uses                  |
+| [`@modulane/eslint-config`](packages/eslint-config)     | ESLint flat configs: one for Node.js packages, one for Nuxt projects |
 
 Each package is versioned and released on its own, from the commits that change its folder. A release is a git tag such as `@modulane/prettier-config@0.2.0`. A `feat:` or `fix:` pull request changes one package and names it as the scope of its title: `fix(prettier-config): …`. Changes to several packages go in one pull request each.
 
