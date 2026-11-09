@@ -3,7 +3,7 @@
 The shared formatting and linting configurations for modulane repositories, so each one stops carrying its own copy.
 
 > [!NOTE]
-> The repository is private and no package is on npm yet.
+> No package is on npm yet.
 
 ## Packages
 
