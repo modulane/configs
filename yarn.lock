@@ -409,6 +409,7 @@ __metadata:
     "@nuxt/eslint-config": "npm:^1.17.0"
     "@vue/compiler-sfc": "npm:^3.5.42"
     eslint: "npm:^10.14.0"
+    eslint-config-prettier: "npm:^10.1.8"
     globals: "npm:^17.14.0"
     typescript: "npm:^6.0.3"
   peerDependencies:
@@ -2350,6 +2351,17 @@ __metadata:
   peerDependencies:
     eslint: ^9.5.0 || ^10.0.0
   checksum: 10c0/d59e94c0d0755372c36aa422a5b3a3e8457496ba5907f00874318be73a9c7288cdb6e73b071f5ccdfea834ab8a5defae2194f859a1bdb4dc0bb9e521943ccf45
+  languageName: node
+  linkType: hard
+
+"eslint-config-prettier@npm:^10.1.8":
+  version: 10.1.8
+  resolution: "eslint-config-prettier@npm:10.1.8"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 10c0/e1bcfadc9eccd526c240056b1e59c5cd26544fe59feb85f38f4f1f116caed96aea0b3b87868e68b3099e55caaac3f2e5b9f58110f85db893e83a332751192682
   languageName: node
   linkType: hard
 

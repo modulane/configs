@@ -1,5 +1,5 @@
 // For Nuxt projects, layers and modules. It adds to the config that
-// @nuxt/eslint generates, rather than replacing it:
+// @nuxt/eslint generates in a Nuxt app:
 //
 //   // eslint.config.mjs
 //   import modulane from '@modulane/eslint-config/nuxt'
@@ -7,8 +7,22 @@
 //
 //   export default withNuxt(...modulane)
 //
-// Formatting stays with Prettier: @nuxt/eslint leaves its stylistic rules
-// off unless they are turned on.
+// or to the one @nuxt/eslint-config builds in a layer or module, which has
+// no .nuxt folder to read it from:
+//
+//   // eslint.config.mjs
+//   import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
+//   import modulane from '@modulane/eslint-config/nuxt'
+//
+//   export default createConfigForNuxt({}, ...modulane)
+//
+// When the app folders are not at the root, as in a repository of layers,
+// list them in the first argument, { dirs: { src: ['layers/base/app'] } }, so
+// that components, layouts and pages get the rules meant for them.
+//
+// Formatting stays with Prettier: eslint-config-prettier comes last and turns
+// off the rules Prettier would contradict, such as vue/html-self-closing.
+import prettier from 'eslint-config-prettier/flat'
 import { ignores, unusedVars } from './shared.js'
 
 export default [
@@ -27,4 +41,5 @@ export default [
       '@typescript-eslint/no-unused-vars': ['error', unusedVars],
     },
   },
+  prettier,
 ]

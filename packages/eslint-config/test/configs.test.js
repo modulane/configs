@@ -83,6 +83,23 @@ describe('nuxt', () => {
     )
   })
 
+  it('leaves the markup Prettier writes alone', async () => {
+    const code = [
+      '<template>',
+      '  <div>',
+      '    <img src="/logo.svg" alt="" />',
+      '    <hr />',
+      '    <span></span>',
+      '  </div>',
+      '</template>',
+      '',
+    ].join('\n')
+    assert.deepEqual(
+      await lint(await config, code, 'components/BaseLogo.vue'),
+      [],
+    )
+  })
+
   it('reports unused variables in TypeScript, but not deliberate ones', async () => {
     const code =
       'export function run(_value: string, other: number) {\n  const unused = 1\n}\n'
