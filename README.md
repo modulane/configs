@@ -2,31 +2,28 @@
 
 The shared formatting and linting configurations for modulane repositories, so each one stops carrying its own copy.
 
-> **Status:** planned. Nothing is published yet.
+> [!NOTE]
+> No package is on npm yet.
 
 ## Packages
 
-| Package                     | What it holds                                                        |
-| --------------------------- | -------------------------------------------------------------------- |
-| `@modulane/prettier-config` | The Prettier options every modulane repository uses                  |
-| `@modulane/eslint-config`   | ESLint flat configs: one for Node.js packages, one for Nuxt projects |
+| Package                                                 | What it holds                                       |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| [`@modulane/prettier-config`](packages/prettier-config) | The Prettier options every modulane repository uses |
 
-Each package is versioned and released on its own.
+Each package is versioned and released on its own, from the commits that change its folder. A release is a git tag such as `@modulane/prettier-config@0.2.0`. A `feat:` or `fix:` pull request changes one package and names it as the scope of its title: `fix(prettier-config): …`. Changes to several packages go in one pull request each.
 
-## Usage
+## Development
 
-```json
-{
-  "prettier": "@modulane/prettier-config"
-}
+```bash
+git clone https://github.com/modulane/configs.git
+cd configs
+corepack enable
+yarn install
+yarn check   # formatting and every package's tests, as CI runs them
 ```
 
-```js
-// eslint.config.js
-import modulane from "@modulane/eslint-config/node";
-
-export default modulane;
-```
+This repository formats itself with `@modulane/prettier-config`, taken straight from its folder.
 
 ## License
 

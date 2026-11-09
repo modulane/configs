@@ -1,10 +1,11 @@
 name: Release
 
 # Every push to main runs the CI workflow, then releases once it has passed,
-# in the same run and from the same commit. semantic-release decides from the
-# commit messages whether a release is needed: fix: and feat: commits release,
-# docs:, style: and chore: do not. A release is a vX.Y.Z git tag and a GitHub
-# release; publishing to npm as well is described in the README.
+# in the same run and from the same commit. multi-semantic-release runs
+# semantic-release once per package, with only the commits that change that
+# package's folder: fix: and feat: commits release it, docs:, style: and
+# chore: do not. A release is a git tag such as @modulane/prettier-config@0.2.0
+# and a GitHub release; nothing is published to npm yet.
 # The manual trigger remains available as a fallback, and its dry run shows
 # what the next release would be without creating anything.
 on:
@@ -33,9 +34,7 @@ jobs:
     name: Release
     needs: ci
     # Release only from main, and never from a fork that has Actions enabled.
-    # Replace REPO-NAME with the repository's name: until then this job never
-    # runs, which is also why it never runs in modulane/repo-template.
-    if: github.repository == 'modulane/REPO-NAME' && github.ref == 'refs/heads/main'
+    if: github.repository == 'modulane/configs' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -77,8 +76,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable --mode=skip-build
 
-      # The CI job has already run the checks on this commit. semantic-release
-      # runs from yarn.lock and is never downloaded.
+      # The CI job has already run the checks on this commit.
+      # multi-semantic-release runs from yarn.lock and is never downloaded.
       - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -86,7 +85,7 @@ jobs:
           DRY_RUN: ${{ inputs.dry-run }}
         run: |
           if [ "$DRY_RUN" = true ]; then
-            yarn semantic-release --dry-run
+            yarn multi-semantic-release --dry-run
           else
-            yarn semantic-release
+            yarn multi-semantic-release
           fi

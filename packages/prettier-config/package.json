@@ -1,0 +1,43 @@
+{
+  "name": "@modulane/prettier-config",
+  "version": "0.0.0-development",
+  "description": "The Prettier options every modulane repository uses.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./index.json",
+    "./package.json": "./package.json"
+  },
+  "main": "./index.json",
+  "files": [
+    "index.json"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "yarn test"
+  },
+  "keywords": [
+    "prettier",
+    "prettier-config",
+    "modulane"
+  ],
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modulane/configs.git",
+    "directory": "packages/prettier-config"
+  },
+  "homepage": "https://github.com/modulane/configs/tree/main/packages/prettier-config#readme",
+  "bugs": {
+    "url": "https://github.com/modulane/configs/issues"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10"
+  }
+}

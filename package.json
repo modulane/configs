@@ -1,0 +1,40 @@
+{
+  "name": "configs",
+  "version": "0.0.0-development",
+  "description": "The shared formatting and linting configurations for modulane repositories.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "yarn format:check && yarn packages run check",
+    "test": "yarn packages run test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "packages": "yarn workspaces foreach --all --include '@modulane/*' --topological-dev --verbose"
+  },
+  "prettier": "@modulane/prettier-config",
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modulane/configs.git"
+  },
+  "homepage": "https://github.com/modulane/configs#readme",
+  "bugs": {
+    "url": "https://github.com/modulane/configs/issues"
+  },
+  "multi-release": {
+    "ignorePrivate": false
+  },
+  "devDependencies": {
+    "@anolilab/multi-semantic-release": "4.6.1",
+    "@modulane/prettier-config": "workspace:*",
+    "prettier": "3.9.10",
+    "semantic-release": "^25.0.9"
+  },
+  "packageManager": "yarn@4.18.1+sha512.b2e1e7524f654f2749d32b4ebcb4622473cb5bcbc485df2007e12a154e50162a4d795526768bc5f5b8f81717bfd79deb2472813d86fb5ae2eb551fa9c872b08f"
+}
