@@ -1,6 +1,6 @@
 # @modulane/eslint-config
 
-ESLint flat configs for modulane repositories. Formatting stays with [Prettier](../prettier-config): neither config turns on a stylistic rule.
+ESLint flat configs for modulane repositories. Formatting stays with [`@modulane/prettier-config`](https://github.com/modulane/configs/tree/main/packages/prettier-config): neither config turns on a stylistic rule.
 
 Both treat unused variables as errors, except when their name starts with an underscore (`_event`, `_error`), and both ignore `coverage/` and `dist/`.
 
@@ -37,4 +37,4 @@ export default withNuxt(...modulane)
 
 ## License
 
-[MIT](../../LICENSE)
+[MIT](LICENSE)

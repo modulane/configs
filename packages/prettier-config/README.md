@@ -26,4 +26,4 @@ export default { ...modulane, printWidth: 100 }
 
 ## License
 
-[MIT](../../LICENSE)
+[MIT](LICENSE)

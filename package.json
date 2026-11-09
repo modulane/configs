@@ -27,9 +27,6 @@
   "bugs": {
     "url": "https://github.com/modulane/configs/issues"
   },
-  "multi-release": {
-    "ignorePrivate": false
-  },
   "devDependencies": {
     "@anolilab/multi-semantic-release": "4.6.1",
     "@modulane/prettier-config": "workspace:*",
