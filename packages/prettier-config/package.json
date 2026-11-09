@@ -36,6 +36,7 @@
   "bugs": {
     "url": "https://github.com/modulane/configs/issues"
   },
+  "funding": "https://www.patreon.com/modulane",
   "peerDependencies": {
     "prettier": "^3.0.0"
   },
