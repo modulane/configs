@@ -41,5 +41,14 @@ export default [
       '@typescript-eslint/no-unused-vars': ['error', unusedVars],
     },
   },
+  {
+    // With typed props, an optional prop left out is undefined, which the
+    // component checks for. A default of undefined would only repeat it.
+    name: 'modulane/vue',
+    files: ['**/*.vue'],
+    rules: {
+      'vue/require-default-prop': 'off',
+    },
+  },
   prettier,
 ]

@@ -21,7 +21,7 @@ export default modulane
 
 ## Nuxt projects
 
-For Nuxt sites, layers and modules. It adds to the config that [`@nuxt/eslint`](https://eslint.nuxt.com) builds instead of replacing it, for JavaScript, TypeScript and Vue files. It also turns off, through [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier), the rules Prettier would contradict, such as `vue/html-self-closing`.
+For Nuxt sites, layers and modules. It adds to the config that [`@nuxt/eslint`](https://eslint.nuxt.com) builds instead of replacing it, for JavaScript, TypeScript and Vue files. It also turns off, through [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier), the rules Prettier would contradict, such as `vue/html-self-closing`. And it lets an optional typed prop have no default, since `undefined` already means "not set".
 
 In a Nuxt app, extend the config the `@nuxt/eslint` module generates:
 

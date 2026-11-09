@@ -100,6 +100,23 @@ describe('nuxt', () => {
     )
   })
 
+  it('lets an optional typed prop have no default', async () => {
+    const code = [
+      '<script setup lang="ts">',
+      'const props = defineProps<{ gap?: number }>()',
+      '</script>',
+      '',
+      '<template>',
+      '  <div :style="{ gap: props.gap ?? 0 }"><slot /></div>',
+      '</template>',
+      '',
+    ].join('\n')
+    assert.deepEqual(
+      await lint(await config, code, 'components/BaseStack.vue'),
+      [],
+    )
+  })
+
   it('reports unused variables in TypeScript, but not deliberate ones', async () => {
     const code =
       'export function run(_value: string, other: number) {\n  const unused = 1\n}\n'
