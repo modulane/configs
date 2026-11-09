@@ -37,6 +37,7 @@
   "bugs": {
     "url": "https://github.com/modulane/configs/issues"
   },
+  "funding": "https://www.patreon.com/modulane",
   "dependencies": {
     "@eslint/js": "^10.0.1",
     "eslint-config-prettier": "^10.1.8",
