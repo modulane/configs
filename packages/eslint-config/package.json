@@ -1,0 +1,51 @@
+{
+  "name": "@modulane/eslint-config",
+  "version": "0.0.0-development",
+  "description": "ESLint flat configs for modulane repositories: one for Node.js packages, one for Nuxt projects.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./node": "./src/node.js",
+    "./nuxt": "./src/nuxt.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "yarn test"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "nuxt",
+    "modulane"
+  ],
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modulane/configs.git",
+    "directory": "packages/eslint-config"
+  },
+  "homepage": "https://github.com/modulane/configs/tree/main/packages/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/modulane/configs/issues"
+  },
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "globals": "^17.14.0"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^1.17.0",
+    "@vue/compiler-sfc": "^3.5.42",
+    "eslint": "^10.14.0",
+    "typescript": "^6.0.3"
+  }
+}
